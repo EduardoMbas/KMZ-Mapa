@@ -1,38 +1,277 @@
-.App {
+/* Estilo para o cabeçalho */
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-header h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsividade para dispositivos móveis no cabeçalho */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8em;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Estilo básico da página */
+.App-main {
+  padding: 10px;
+}
+
+.map-container {
+  margin-top: 30px;
+}
+
+.marker-selection {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.button-group {
+  display: inline-flex;
+}
+
+.marker-actions {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: row;
+  gap: 10px;
+}
+
+.marker-actions .button-clean{
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.red-button {
+  background-color: #FF4D4D;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.blue-button {
+  background-color: #4DA6FF;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.yellow-button {
+  background-color: #FFD700;
+  color: black;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsividade para o input e textarea */
+@media (max-width: 768px) {
+  .marker-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .marker-actions .button-clean{
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 6px;
+  }
+}
+
+.form-buttons {
+  margin-top: 10px;
+}
+
+.form-buttons .button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form-buttons .button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Legenda fixa no mapa */
+.map-legend {
+  background: white;
+  padding: 5px; /* Reduz o padding */
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px; /* Ajusta a posição para mais próxima da borda */
+  left: 5px; /* Ajusta a posição para mais próxima da borda */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Reduz o shadow */
+  z-index: 1000;
+  font-size: 0.8em; /* Diminui o tamanho da fonte */
+}
+
+.map-legend h4 {
+  margin: 0;
+  font-size: 1em; /* Diminui o tamanho do título */
+}
+
+.map-legend p {
+  margin: 3px 0; /* Reduz o espaçamento entre os itens */
+}
+
+.legend-icon {
+  display: inline-block;
+  width: 10px; /* Diminui o tamanho do ícone */
+  height: 10px; /* Diminui o tamanho do ícone */
+  margin-right: 5px; /* Reduz o espaço entre ícone e texto */
+  border-radius: 50%;
+}
+
+
+.legend-icon.red {
+  background-color: #FF4D4D;
+}
+
+.legend-icon.blue {
+  background-color: #4DA6FF;
+}
+
+.legend-icon.yellow {
+  background-color: #FFD700;
+}
+
+/* Estilo para a tabela de KMZs */
+.kmz-table {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.kmz-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.kmz-table th, .kmz-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.kmz-table th {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.kmz-table td {
+  text-align: center;
+}
+
+/* Responsividade para a tabela */
+@media (max-width: 768px) {
+  .kmz-table table, .kmz-table th, .kmz-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .kmz-table th, .kmz-table td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  .kmz-table td {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .kmz-table th {
+    background-color: #e0e0e0;
+  }
+}
+
+.kmz-table button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.kmz-table button:hover {
+  background-color: #0056b3;
+}
+
+/* Campo de busca */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Responsividade para o campo de busca */
+@media (max-width: 768px) {
+  .search-input {
+    width: 80%;
+    padding: 8px;
+  }
+}
+
+/* Responsividade para o mapa */
+@media (max-width: 768px) {
+  .leaflet-container {
+    height: 300px !important; /* Reduz a altura do mapa em telas menores */
+  }
+  
+  .map-legend {
+    font-size: 0.9em; /* Reduz tamanho da fonte na legenda */
+    bottom: 10px;
+    left: 5px;
+    padding: 5px; /* Reduz o padding da legenda */
   }
 }
