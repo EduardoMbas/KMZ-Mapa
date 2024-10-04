@@ -210,10 +210,7 @@ function Mapa({ setKmzFiles, kmzFiles, searchTerm, setSearchTerm }) {
           <button onClick={() => selectMarker('blue')} className="button blue-button"></button>
           <button onClick={() => selectMarker('yellow')} className="button yellow-button"></button>
         </div>
-        <div className="marker-actions">
-          <button onClick={removeLastMarker} className="button-clean">Remover Último Marcador</button>
-          <button onClick={clearAllMarkers} className="button-clean">Limpar Todos os Marcadores</button>
-        </div>
+        
       </div>
 
       <MapContainer center={[-3.71722, -38.5434]} zoom={13} style={{ height: "400px", width: "100%" }}>
@@ -252,6 +249,10 @@ function Mapa({ setKmzFiles, kmzFiles, searchTerm, setSearchTerm }) {
           <p><span className="legend-icon yellow"></span> Ponto Personalizado</p>
         </div>
       </MapContainer>
+      <div className="marker-actions">
+          <button onClick={removeLastMarker} className="button-clean">Remover Último Marcador</button>
+          <button onClick={clearAllMarkers} className="button-clean">Limpar Todos os Marcadores</button>
+        </div>
 
       <div className="route-form">
         <input

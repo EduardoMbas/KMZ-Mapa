@@ -1,17 +1,22 @@
 /* Estilo para o cabeçalho */
 .App-header {
-  background-color: #282c34;
-  padding: 20px;
+  background-color: #686868;
+  padding: 10px;
   color: white;
   text-align: center;
+  height: 50px;
 }
 
 .App-header h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0;
+}
+
+.marker-actions {
+  margin: 20px;
 }
 
 /* Responsividade para dispositivos móveis no cabeçalho */
@@ -269,7 +274,7 @@
   }
   
   .map-legend {
-    font-size: 0.9em; /* Reduz tamanho da fonte na legenda */
+    font-size: 0.8em; /* Reduz tamanho da fonte na legenda */
     bottom: 10px;
     left: 5px;
     padding: 5px; /* Reduz o padding da legenda */
